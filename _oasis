@@ -1,0 +1,45 @@
+OASISFormat:  0.3
+Name:         gperftools
+Version:      0.1
+License:      LGPL-2.1 with OCaml linking exception
+Authors:      ygrek
+Copyrights:   (C) 2012 ygrek
+Homepage:     http://gperftools.forge.ocamlcore.org/
+BuildTools:   ocamlbuild
+Plugins:      DevFiles (0.3), META (0.3)
+
+Synopsis: Bindings to gperftools 
+Description:
+  gperftools <https://code.google.com/p/gperftools/> library 
+  provides fast, multi-threaded malloc() and some nifty performance
+  analysis tools.
+  These bindings are useful to monitor memory usage and control
+  behaviour of malloc() when the program is linked against tcmalloc.
+
+Flag strict
+  Description: Strict compile-time checks
+  Default: true
+
+Library gperftools
+  Path: src
+  Modules: Gperftools
+  if flag(strict) && ccomp_type(cc)
+    CCOpt: -std=c89 -pedantic -Wno-long-long -Wextra
+  CClib: -ltcmalloc
+  CCOpt: -g -x c++
+  CSources: gperftools_stubs.c
+
+Document api
+  Title: API reference for gperftools
+  Type: ocamlbuild (0.3)
+  Authors: ygrek
+  BuildTools: ocamldoc
+  Format: HTML
+  Index: index.html
+  XOCamlbuildPath:      src
+  XOCamlbuildLibraries: gperftools
+
+SourceRepository main
+  Type: git
+  Location: http://git.ocamlcore.org/gperftools/gperftools.git
+  Browser: http://git.ocamlcore.org/cgi-bin/gitweb.cgi?p=gperftools/gperftools.git
