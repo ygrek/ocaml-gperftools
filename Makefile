@@ -36,3 +36,16 @@ setup.data:
 .PHONY: build doc test all install uninstall reinstall clean distclean configure
 
 # OASIS_STOP
+
+VERSION=$(shell oasis query version)
+NAME=ocaml-gperftools-$(VERSION)
+
+.PHONY: release
+release:
+	git tag -a -m $(VERSION) v$(VERSION)
+	rm -rf stage
+	mkdir stage
+	git archive --prefix=$(NAME)/ v$(VERSION) | tar --delete $(NAME)/web | tar x -C stage
+	(cd stage/$(NAME)/ && oasis setup -setup-update none && cd .. && tar czf ../$(NAME).tar.gz $(NAME))
+	rm -rf stage
+	gpg -a -b $(NAME).tar.gz
