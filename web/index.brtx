@@ -12,12 +12,12 @@ behaviour of malloc() when the program is linked against tcmalloc.
 
 {begin list}
 {*}{link https://forge.ocamlcore.org/projects/gperftools/|OCamlCore project page}
-{*}{link http://oasis.ocamlcore.org/dev/view/gperftools/|OASIS DB}
+{*}{link http://oasis.ocamlcore.org/dev/view/ocaml-gperftools/|OASIS DB}
 {*}{link https://forge.ocamlcore.org/frs/?group_id=300|Download}
-#{begin list}
-#  {*}{link https://forge.ocamlcore.org/frs/download.php/878/ocaml-extunix-0.0.4.tar.gz|ocaml-extunix-0.0.4.tar.gz}
-#  ({link https://forge.ocamlcore.org/frs/download.php/879/ocaml-extunix-0.0.4.tar.gz.asc|sig}), 19 May 2012
-#{end}
+{begin list}
+  {*}{link https://forge.ocamlcore.org/frs/download.php/898/ocaml-gperftools-0.1.tar.gz|ocaml-gperftools-0.1.tar.gz}
+  ({link https://forge.ocamlcore.org/frs/download.php/899/ocaml-gperftools-0.1.tar.gz.asc|sig}), 16 Jun 2012
+{end}
 {*}{link https://forge.ocamlcore.org/tracker/?group_id=300|Bug tracker}
 {*}Code
 {begin list}
@@ -29,7 +29,7 @@ behaviour of malloc() when the program is linked against tcmalloc.
 {end}
 
 {bypass end}<hr/>{end}
-{p}2012-06-13
+{p}2012-06-16
 {bypass end}
 <a href="http://oasis.forge.ocamlcore.org/">
   <img
