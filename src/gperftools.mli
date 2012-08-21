@@ -43,6 +43,9 @@ Some currently useful properties :
 *)
 val known_properties : string list
 
+(* @return version information: (human-readable string, major, minor, patch level) *)
+val version : unit -> string * int * int * string
+
 (** {2 Heap profiler} *)
 
 val heap_profiler_start : string -> unit

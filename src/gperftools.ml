@@ -18,6 +18,8 @@ let known_properties = [
   "tcmalloc.current_total_thread_cache_bytes";
 ]
 
+external version : unit -> string * int * int * string = "ml_tc_version"
+
 external heap_profiler_start : string -> unit = "ml_gpt_HeapProfilerStart"
 external is_heap_profiler_running : unit -> bool = "ml_gpt_IsHeapProfilerRunning"
 external heap_profiler_stop : unit -> unit = "ml_gpt_HeapProfilerStop"

@@ -14,6 +14,7 @@ extern "C" {
 
 #include <google/malloc_extension.h>
 #include <google/heap-profiler.h>
+#include <google/tcmalloc.h>
 
 ML_EXTERN ml_gpt_ReleaseFreeMemory(value unit)
 {
@@ -108,3 +109,21 @@ ML_EXTERN ml_gpt_GetNumericProperty(value v_name)
   return Val_long(x);
 }
 
+ML_EXTERN ml_tc_version(value v_unit)
+{
+  CAMLparam1(v_unit);
+  CAMLlocal1(v);
+  int major = 0, minor = 0;
+  const char* p = "zz";
+  const char* s = "";
+
+  s = tc_version(&major, &minor, &p);
+
+  v = caml_alloc_tuple(4);
+  Store_field(v, 0, caml_copy_string(s));
+  Store_field(v, 1, Val_int(major));
+  Store_field(v, 2, Val_int(minor));
+  Store_field(v, 3, caml_copy_string(p));
+
+  CAMLreturn(v);
+}
