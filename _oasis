@@ -25,7 +25,7 @@ Library gperftools
   Modules: Gperftools
   if flag(strict) && ccomp_type(cc)
     CCOpt: -std=c89 -pedantic -Wno-long-long -Wextra
-  CClib: -ltcmalloc
+  CClib: -ltcmalloc -lstdc++
   CCOpt: -g -x c++
   CSources: gperftools_stubs.c
 
