@@ -13,9 +13,12 @@ let known_properties = [
   "generic.heap_size";
   "tcmalloc.pageheap_free_bytes";
   "tcmalloc.pageheap_unmapped_bytes";
-  "tcmalloc.slack_bytes";
+  "tcmalloc.central_cache_free_bytes";
+  "tcmalloc.transfer_cache_free_bytes";
+  "tcmalloc.thread_cache_free_bytes";
   "tcmalloc.max_total_thread_cache_bytes";
   "tcmalloc.current_total_thread_cache_bytes";
+  "tcmalloc.aggressive_memory_decommit";
 ]
 
 external version : unit -> string * int * int * string = "ml_tc_version"

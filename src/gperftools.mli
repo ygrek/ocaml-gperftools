@@ -37,9 +37,9 @@ Some currently useful properties :
 - [generic.heap_size] - bytes of system memory reserved by TCMalloc.
 - [tcmalloc.pageheap_free_bytes] - number of bytes in free, mapped pages in page heap. These bytes can be used to fulfill allocation requests. They always count towards virtual memory usage, and unless the underlying memory is swapped out by the OS, they also count towards physical memory usage.
 - [tcmalloc.pageheap_unmapped_bytes] - number of bytes in free, unmapped pages in page heap. These are bytes that have been released back to the OS, possibly by one of the MallocExtension "Release" calls. They can be used to fulfill allocation requests, but typically incur a page fault. They always count towards virtual memory usage, and depending on the OS, typically do not count towards physical memory usage.
-- [tcmalloc.slack_bytes] - sum of pageheap_free_bytes and pageheap_unmapped_bytes. Provided for backwards compatibility only. Do not use.
-- [tcmalloc.max_total_thread_cache_bytes] - a limit to how much memory TCMalloc dedicates for small objects. Higher numbers trade off more memory use for -- in some situations -- improved efficiency.
+- [tcmalloc.max_total_thread_cache_bytes] - a limit to how much memory TCMalloc dedicates for small objects. Higher numbers trade off more memory use for -- in some situations -- improved efficiency. Writable.
 - [tcmalloc.current_total_thread_cache_bytes] - a measure of some of the memory TCMalloc is using (for small objects).
+- [tcmalloc.aggressive_memory_decommit] - when returning chunk of memory to system, try to return all neighboring free chunks as well. Writable.
 *)
 val known_properties : string list
 
