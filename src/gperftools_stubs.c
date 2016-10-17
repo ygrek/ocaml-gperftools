@@ -12,9 +12,9 @@ extern "C" {
 #define UNUSED(x) (void)(x)
 #define ML_EXTERN extern "C" value
 
-#include <google/malloc_extension.h>
-#include <google/heap-profiler.h>
-#include <google/tcmalloc.h>
+#include <gperftools/malloc_extension.h>
+#include <gperftools/heap-profiler.h>
+#include <gperftools/tcmalloc.h>
 
 ML_EXTERN ml_gpt_ReleaseFreeMemory(value unit)
 {
