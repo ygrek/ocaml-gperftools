@@ -43,9 +43,5 @@ NAME=ocaml-gperftools-$(VERSION)
 .PHONY: release
 release:
 	git tag -a -m $(VERSION) v$(VERSION)
-	rm -rf stage
-	mkdir stage
-	git archive --prefix=$(NAME)/ v$(VERSION) | tar --delete $(NAME)/web | tar x -C stage
-	(cd stage/$(NAME)/ && oasis setup -setup-update none && cd .. && tar czf ../$(NAME).tar.gz $(NAME))
-	rm -rf stage
+	git archive --prefix=$(NAME)/ v$(VERSION) | gzip > $(NAME).tar.gz
 	gpg -a -b $(NAME).tar.gz
