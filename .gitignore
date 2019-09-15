@@ -1,5 +1,3 @@
-_build
-setup.log
-setup.data
-api.docdir
-web/index.html
+_build/
+*.install
+*.merlin

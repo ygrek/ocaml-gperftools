@@ -1,4 +1,3 @@
-
 extern "C" {
 #include <caml/mlvalues.h>
 #include <caml/memory.h>
@@ -77,7 +76,7 @@ ML_EXTERN ml_gpt_GetMemoryReleaseRate(value unit)
   return caml_copy_double(d);
 }
 
-static void invalid_property(value message) 
+static void invalid_property(value message)
 {
   CAMLparam1(message);
   static value* exn = NULL;
