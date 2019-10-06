@@ -1,7 +1,7 @@
 (**
   Bindings to gperftools. Monitor memory usage and control behaviour of tcmalloc.
 
-  @see <http://code.google.com/p/gperftools/> gperftools project page
+  @see <https://github.com/gperftools/gperftools> gperftools project page
 
   @author ygrek\@autistici.org
 *)
