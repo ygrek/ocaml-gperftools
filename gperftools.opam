@@ -8,13 +8,12 @@ doc: ["http://ygrek.org.ua/p/ocaml-gperftools/api/index.html"]
 tags: ["org:ygrek"]
 build: [
   ["dune" "subst"] {pinned}
-  ["dune" "build" "-p" name "-j" jobs
-   "@install"
-   "@doc" {with-doc}]
+  ["dune" "build" "-p" name "-j" jobs "@install" "@doc" {with-doc}]
 ]
 depends: [
   "ocaml" {< "4.09.0"}
   "dune"
+  "odoc" {with-doc}
 ]
 depexts: [
   ["libgoogle-perftools-dev"] {os-family = "debian"}
