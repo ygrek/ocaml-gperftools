@@ -79,7 +79,7 @@ ML_EXTERN ml_gpt_GetMemoryReleaseRate(value unit)
 static void invalid_property(value message)
 {
   CAMLparam1(message);
-  static value* exn = NULL;
+  static const value* exn = NULL;
   if (NULL == exn)
   {
     exn = caml_named_value("Gperftools.Invalid_property");
