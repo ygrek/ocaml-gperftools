@@ -20,7 +20,7 @@ clean:
 
 .PHONY: build doc test all install uninstall clean
 
-VERSION=0.4
+VERSION=0.5
 NAME=ocaml-gperftools-$(VERSION)
 
 .PHONY: release
